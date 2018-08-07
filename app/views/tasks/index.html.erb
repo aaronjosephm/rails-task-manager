@@ -1,0 +1,10 @@
+<h1>Here's list</h1>
+<% @tasks.each do |task| %>
+<div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1"><%= task.title %></label>
+    <%= link_to "details", task_path(task), method: :get%><%= button_to "delete", task_path(task), method: :delete%>
+</div>
+<% end %>
+
+<h2><%= link_to "create new", tasks_new_path, method: :get%></h2>
